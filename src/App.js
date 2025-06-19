@@ -1,5 +1,5 @@
 //import { useState } from 'react';
-//import './App.css';
+import './App.css';
 //import Greet from './Greet.js';
 //
 // import image from './assests/download.jpg';
@@ -49,8 +49,11 @@ import Calc from './Calculator';
 
 function App() {
   return (
-  <div>
+  <div class="container">
+    
     <h2>Simple Calculator</h2>
+    
+    
     <Calc />
   </div>
   );

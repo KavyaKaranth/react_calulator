@@ -1,6 +1,6 @@
 import { useState } from "react";
 function Calc(){
-    const [number1, setNumber1] = useState(null);
+  const [number1, setNumber1] = useState(null);
   const [number2, setNumber2] = useState(null);
   const [result, setResult] = useState(null);
   function handleSubmit(e){
@@ -12,7 +12,7 @@ function Calc(){
          add:a+b,
         difference:a-b,
         product:a*b,
-        dividion:b!==0 ? (a/b) : 'cannot divide by zero'
+        division:b!==0 ? (a/b).toFixed(2) : 'cannot divide by zero'
       })
       }
       else{
