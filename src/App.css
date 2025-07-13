@@ -15,7 +15,7 @@ body {
 }
 
 .calculator {
-  background-color: #006666;
+  background-color: #020707;
   color: #00e6e6;
   padding: 30px 20px;
   border-radius: 12px;
@@ -52,8 +52,8 @@ body {
   font-size: 18px;
   border: none;
   border-radius: 6px;
-  background-color: #222;
-  color: #00e6e6;
+  background-color: #f6f8f6;
+  color: #0d0e0e;
   transition: 0.2s;
   cursor: pointer;
 }
