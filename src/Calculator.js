@@ -1,42 +1,46 @@
-import { useState } from "react";
-function Calc(){
-  const [number1, setNumber1] = useState(null);
-  const [number2, setNumber2] = useState(null);
-  const [result, setResult] = useState(null);
-  function handleSubmit(e){
-    e.preventDefault();
-      const a=parseFloat(number1);
-      const b=parseFloat(number2);
-      if(!isNaN(a) && !isNaN(b)){
-        setResult({
-         add:a+b,
-        difference:a-b,
-        product:a*b,
-        division:b!==0 ? (a/b).toFixed(2) : 'cannot divide by zero'
-      })
+import React, { useState } from "react";
+import "./App.css";
+
+function Calculator() {
+  const [display, setDisplay] = useState("0");
+
+  const handleClick = (value) => {
+    if (value === "C") {
+      setDisplay("0");
+    } else if (value === "=") {
+      try {
+        setDisplay(eval(display).toString());
+      } catch {
+        setDisplay("Error");
       }
-      else{
-        setResult(null);
-        alert("Please enter valid numbers.");
-      }
-      
-  }
-  return (
-        <div>
-        <form onSubmit={handleSubmit}>
-          <input type="number" value={number1} placeholder="Enter number " onChange={(e)=>setNumber1(e.target.value)} />
-          <input type="number" value={number2} placeholder="Enter number " onChange={(e)=>setNumber2(e.target.value)}/>
-          <button type="submit">Calculate</button>
-        </form>
-        {result && (
-            <div>
-                <p>Addition:{result.add}</p>
-                <p>Subtraction:{result.difference}</p>
-                <p>Product:{result.product}</p>
-                <p>Division:{result.division}</p>
-             </div>    
-        )}
-        </div>
+    } else {
+      setDisplay((prev) =>
+        prev === "0" ? value : prev + value
       );
+    }
+  };
+
+  const buttons = [
+    "1", "2", "3",
+    "4", "5", "6",
+    "7", "8", "9",
+    "C", "0", "=",
+    "+", "-", "*", "/"
+  ];
+
+  return (
+    <div className="calculator-container">
+      <h2>React Calculator</h2>
+      <div className="display">{display}</div>
+      <div className="button-grid">
+        {buttons.map((btn, idx) => (
+          <button key={idx} onClick={() => handleClick(btn)}>
+            {btn}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 }
-export default Calc;
+
+export default Calculator;

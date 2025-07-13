@@ -1,41 +1,52 @@
-body{
-  background-color: beige;
+body {
+  margin: 0;
+  background-color: #c0e6b9;
+  font-family: Arial, sans-serif;
 }
-.container {
+ 
+.calculator-container {
   max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
+  margin: 60px auto;
   text-align: center;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  background-color: #f15151;
+  padding: 20px;
+  background-color: #1e9a2c;
+  border-radius: 8px;
 }
 
+h2 {
+  margin-bottom: 20px;
+  align-items: center;
+  text-align: center;
+}
 
-input[type="number"] {
-  margin: 10px;
+.display {
+  background-color: #222;
+  color: #00e6e6;
+  font-size: 24px;
   padding: 10px;
-  width: 80%;
-  border: 1px solid #141010;
+  margin-bottom: 20px;
+  border: 2px solid #00e6e6;
   border-radius: 6px;
 }
 
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
 
-button {
-  padding: 10px 20px;
-  background-color: #2196f3;
-  color: white;
-  border: none;
-  border-radius: 6px;
+.button-grid button {
+  padding: 15px;
+  font-size: 18px;
+  background-color: #222;
+  color: #00e6e6;
+  border: 2px solid #00e6e6;
+  border-radius: 4px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-button:hover {
-  background-color: #1976d2;
-}
-
-
-p {
-  font-weight: bold;
-  margin: 8px 0;
+.button-grid button:hover {
+  background-color: #00e6e6;
+  color: #222;
 }

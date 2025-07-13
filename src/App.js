@@ -51,7 +51,7 @@ function App() {
   return (
   <div class="container">
     
-    <h2>Simple Calculator</h2>
+    
     
     
     <Calc />
