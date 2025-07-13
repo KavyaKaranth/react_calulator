@@ -14,9 +14,7 @@ function Calculator() {
         setDisplay("Error");
       }
     } else {
-      setDisplay((prev) =>
-        prev === "0" ? value : prev + value
-      );
+      setDisplay((prev) => (prev === "0" ? value : prev + value));
     }
   };
 
@@ -29,15 +27,17 @@ function Calculator() {
   ];
 
   return (
-    <div className="calculator-container">
-      <h2>React Calculator</h2>
-      <div className="display">{display}</div>
-      <div className="button-grid">
-        {buttons.map((btn, idx) => (
-          <button key={idx} onClick={() => handleClick(btn)}>
-            {btn}
-          </button>
-        ))}
+    <div className="wrapper">
+      <div className="calculator">
+        <h2>React Calculator</h2>
+        <div className="display">{display}</div>
+        <div className="button-grid">
+          {buttons.map((btn, idx) => (
+            <button key={idx} onClick={() => handleClick(btn)}>
+              {btn}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
